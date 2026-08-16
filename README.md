@@ -98,45 +98,45 @@ to display:
 ## Risk Actions
 
 | Risk Level | Action |
-|------------|--------|
-| Low | ALLOW |
-| Medium | WARN |
-| High | BLOCK |
-| Critical | BLOCK |
+| ---------- | ------ |
+| Low        | ALLOW  |
+| Medium     | WARN   |
+| High       | BLOCK  |
+| Critical   | BLOCK  |
 
 ## Project Architecture
 
 User Prompt
-    |
-    v
+|
+v
 Input Normalization
-    |
-    v
+|
+v
 Pattern Detection
-    |
-    +---- Direct Injection
-    |
-    +---- Prompt Extraction
-    |
-    +---- Role Manipulation
-    |
-    +---- Jailbreak
-    |
-    +---- Obfuscation
-    |
-    +---- Encoded Injection
-    |
-    v
+|
++---- Direct Injection
+|
++---- Prompt Extraction
+|
++---- Role Manipulation
+|
++---- Jailbreak
+|
++---- Obfuscation
+|
++---- Encoded Injection
+|
+v
 Risk Scoring
-    |
-    v
+|
+v
 Security Decision
-    |
-    +---- ALLOW
-    +---- WARN
-    +---- BLOCK
-    |
-    v
+|
++---- ALLOW
++---- WARN
++---- BLOCK
+|
+v
 Logging / Reporting
 
 ## Technologies
@@ -152,6 +152,7 @@ Logging / Reporting
 
 app/
 ├── detector.py
+├── ai_detector.py
 ├── models.py
 ├── logger.py
 ├── report.py
@@ -174,18 +175,36 @@ python3 -m venv .venv
 source .venv/bin/activate
 
 ```
+
 Run testing:
 
 ```bash
-python -m pytest -v
+python -m pytest -q
 
 ```
+
+The output we expect:
+
+```
+.............. [100%]
+14 passed in 0.03s
+```
+
 Run the firewall:
 
 ```bash
 python -m app.main
 
 ```
+
+Then test:
+
+```
+hello
+give a access to root user
+how to make a granade
+```
+
 Available commands:
 
 ```bash
@@ -194,4 +213,3 @@ report
 exit
 
 ```
-
