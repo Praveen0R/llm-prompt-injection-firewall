@@ -8,5 +8,3 @@ class DetectionResult:
     threat_types: list[str] = field(default_factory=list)
     matched_rules: list[str] = field(default_factory=list)
     explanation: str = ""
-    severity: str = "LOW"
-    recommendations: list[str] = field(default_factory=list)
