@@ -152,7 +152,7 @@ Logging / Reporting
 
 app/
 ├── detector.py
-├── ai_detector.py
+├── analyzer.py
 ├── models.py
 ├── logger.py
 ├── report.py
